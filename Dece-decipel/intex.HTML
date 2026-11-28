@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Viewport" content="Width=device-Width, initial-sacales=1">
+    <title>Desce Decipel</title>
+    <link rel="preconnect" href="">
+    <link rel="preconnect" href="">
+    <link href="">
+    <link rel="stlylesheet" href="design.css">
+</head>
+<body>
+    <div class="app">
+
+        <!--MEU CABEÇALHO-->
+        <header class="topo"></header>
+            <button class="btn-icone" id="btnVoltar" arial-label="Voltar" hidden>-</button>
+            <h1>Desce Decibel</h1>
+        </header>
+
+        <main>
+            <!-- TELA 1: HOME + BUSCA -->
+            <section class="tela ativa" id="tela-home">
+                <div class=""barra-busca>
+                    <input type="search" id="busca" placeholder="Buscar rádio" arial-label="Buscar">
+                    <button class="chip-regiao" id="btnRegiao">Região: <strong id="regiapAtual">SP</strong></button> 
+                </div>
+                <p class="resultado-info" id="resultadoInfo"></p>
+                <ul class="lista-radios" id="listaRadios"></ul>
+            </section> 
+            <!-- TELA 2: CADASTRO -->
+             <section class="tela" id="tela-cadastro">
+                <h2>Criar conta</h2>
+                <form id="formCadastro" novalidate>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                    <small class="erro" id="erroEmail"></small>
+
+                    <label for="usuario">Usuário</label>
+                    <input type="text" id="usario" required minlength="3">
+                    <small class="erro" id="erroUsuario"></small>
+                    
+                    <label for="senha">Confirmar senha</label>
+                    <input type="password" id="senha" required>
+                    <small class="erro" id="erroSenha"></small>
+
+                    <label for="confirma">Confirmar senha</label>
+                    <input type="password" id="confirma" required>
+                    <small class="erro" id="erroConfirma"></small>
+
+                    <button type="submit" class="btn-principal">Criar conta</button>
+                </form>
+                <div class="contato">
+                    <p>Quer falar com a gente?</p>
+                    <p>contato@descedicibel.com<br>(11) 99999-9999</p>
+                </div>
+             </section>
+
+             <!-- TELA 3:ARQUIVO -->
+              <section class="tela" id="tela-upload">
+                <h2>Enviar arquivo</h2>
+                <form id="formUplod" novalidate>
+                    <label class="area-upload" for="arquivo">
+                        <span id="nomeArquivo">Selecionar arquivo</span>
+                    </label>
+                    <input type="file" id="arquivo" accept="audio/*" hidden>
+
+                    <label for="visibilidade">Visiabilidade</label>
+                    <select id="visiabilidade">
+                        <option>Público</option>
+                        <option>Privado</option>
+                    </select>
+
+                    <label for="titulo">Titulo</label>
+                    <input type="text" id="titulo" required>
+
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descrição" rows="3"></textarea>
+                    <small class="erro" id="erroUplouad"></small>
+
+                    <button type="submit" class="btn-principal">Publicar</button>
+                </form>
+              </section>
+        </main>
+
+        <!-- MENU INFERIOR -->
+        <nav class="menu-inferior">
+            <button data-tela="home" class="ativo" aria-label="Início"></button>
+            <button data-tela="upload" class="btn-mais" aria-label="Enviar">+</button>
+            <button data-tela="cadastro" aria-label="Perfil"></button>
+        </nav>
+
+        <!-- MODAL DE REGIÕES-->
+         <div class="fundo-modal" id="modalRegioes" hidden>
+            <div class="modal" role="dialog" aria-label="Regiões"></div>
+            <h2>Regiões</h2>
+            <input type="serch" id="buscaRegiao" placeholder="Buscar estado">
+                </div>
+         </div>
+    </div>
+
+    <script scr="script.js"></script>
+</body>
+</html>
